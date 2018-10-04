@@ -1,14 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createStore, applyMiddleware, compose } from "redux";
 import ReduxPromise from "redux-promise";
 import rootReducer from "../src/reducers/index";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Posts from "./components/Posts";
+import NewPost from "./components/NewPost";
+import Navigation from "./components/Navigation";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,11 +20,19 @@ const store = createStore(
   composeEnhancers(applyMiddleware(ReduxPromise))
 );
 
+const routes = (
+  <div>
+    <Navigation />
+    <Switch>
+      <Route path="/posts/newPost" component={NewPost} />
+      <Route path="/" component={Posts} />
+    </Switch>
+  </div>
+);
+
 const app = (
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <BrowserRouter>{routes}</BrowserRouter>
   </Provider>
 );
 

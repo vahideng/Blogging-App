@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchPosts } from "./actions/index";
+import { fetchPosts } from "../actions/index";
 import { ListGroup, ListGroupItem } from "reactstrap";
-import styles from "./List.module.css";
+import styles from "./Style.module.css";
 
-class App extends Component {
+class Posts extends Component {
   componentDidMount() {
     this.props.onFetchData();
   }
@@ -14,7 +14,7 @@ class App extends Component {
     console.log(this.props.posts, "posts2");
     return Object.keys(this.props.posts).map(post => {
       return (
-        <div className={styles.DDd}>
+        <div>
           <ListGroupItem
             key={post.id}
             color="success"
@@ -56,4 +56,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(Posts);
