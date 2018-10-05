@@ -11,7 +11,7 @@ import rootReducer from "../src/reducers/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Posts from "./components/Posts";
 import NewPost from "./components/NewPost";
-import Navigation from "./components/Navigation";
+import Post from "./components/Post";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -22,8 +22,8 @@ const store = createStore(
 
 const routes = (
   <div>
-    <Navigation />
     <Switch>
+      <Route path="/post/:id" component={Post} />
       <Route path="/posts/newPost" component={NewPost} />
       <Route path="/" component={Posts} />
     </Switch>
