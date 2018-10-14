@@ -5,8 +5,10 @@ import { fetchPost, deletePost } from "../actions/index";
 import { connect } from "react-redux";
 class Post extends Component {
   componentDidMount() {
-    const { id } = this.props.match.params;
-    this.props.onFetchPost(id);
+    if (!this.props.post) {
+      const { id } = this.props.match.params;
+      this.props.onFetchPost(id);
+    }
   }
   deletHandler() {
     const { id } = this.props.match.params;

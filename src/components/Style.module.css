@@ -1,23 +1,91 @@
-.ListGroupItem {
-  width: 100%;
-  margin: 10px;
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+h1 {
+  color: #1871d6;
+}
+.ContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  width: 80%;
 }
 .ListGroup {
   width: 100%;
-  padding-right: 0;
+
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
 }
-.Wrapper {
-  max-width: 1000px;
+.ListGroupItem {
+  width: 100%;
+  margin-top: 10px;
+  color: black;
+  background-color: rgb(234, 237, 236);
+  list-style: none;
+  border-radius: 4px;
+  border: 1px solid rgb(61, 153, 92);
+  height: 80%;
+  text-align: center;
+  box-shadow: 2px gray;
+  padding: 20px;
+}
+.ListGroup a {
+  width: 80%;
+  height: 6rem;
+  text-decoration: none;
 }
 
-div a:hover,
-a {
+.ListGroup li:hover {
   text-decoration: none;
   color: white;
+  background: rgb(112, 112, 112);
+  cursor: pointer;
 }
 
 .ListGroupButton {
   padding: 0;
-
   top: 64px;
+}
+.AddButton {
+  border: 1px solid gray;
+  width: 100px;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+  background: rgb(135, 134, 135);
+  color: rgb(178, 200, 205);
+  height: 3rem;
+  padding-top: 10px;
+}
+.AddButton:hover {
+  background-color: #9997a1;
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 400px) {
+  .ListGroup {
+    max-width: 1600px;
+    font-size: 2rem;
+    font-weight: 200;
+  }
+  .ListGroupItem {
+    padding: 6px;
+  }
+}
+
+.MainHeader {
+  width: 100%;
+  height: 20rem;
+}
+
+.MainHeader img {
+  height: 100%;
+  width: 100%;
+  background-position: 0 20%;
 }
