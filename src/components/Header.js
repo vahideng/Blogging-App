@@ -6,7 +6,7 @@ class header extends Component {
   render() {
     return (
       <header className={styles.MainHeader}>
-        <img src={image} alt="sag to roh mweysam" />
+        <img src={image} alt="" />
       </header>
     );
   }
